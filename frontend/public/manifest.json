@@ -1,0 +1,6 @@
+{
+  "short_name": "Playground - React - Spring",
+  "name": "Playground - React - Spring",
+  "start_url": "./index.html",
+  "display": "standalone"
+}
