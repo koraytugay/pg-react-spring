@@ -1,0 +1,22 @@
+// Define the Java plugin
+plugins {
+    id 'java'
+}
+
+// Define the repositories to resolve dependencies from
+repositories {
+    mavenCentral()
+}
+
+// Define the dependencies for your project
+dependencies {
+    implementation 'org.slf4j:slf4j-api:1.7.32'
+    implementation 'com.google.guava:guava:31.0.1-jre'
+    testImplementation 'junit:junit:4.13.2'
+}
+
+// Define project configurations and settings
+group 'com.example' // Replace with your project's group
+version '1.0.0' // Replace with your project's version
+
+// Define additional configurations, tasks, or settings as needed
