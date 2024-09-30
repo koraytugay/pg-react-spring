@@ -1,0 +1,20 @@
+{
+    "name": "name/name",
+    "type": "project",
+    "description": "Description",
+    "keywords": ["keyword"],
+    "license": "MIT",
+    "require": {
+        "symfony/event-dispatcher-contracts": "^3.4",
+        "guzzlehttp/guzzle": "7.4.4",
+        "ralouphie/getallheaders": "3.0.3",
+        "symfony/css-selector": "^7.0",
+        "brick/math": "^0.12.1",
+        "league/flysystem": "^3.26",
+        "nesbot/carbon": "^3.2"
+
+    },
+    "require-dev": {
+        "fakerphp/faker": "^1.9.1"
+    }
+}
