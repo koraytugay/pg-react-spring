@@ -1,0 +1,234 @@
+{
+  "SPDXID" : "SPDXRef-DOCUMENT",
+  "spdxVersion" : "SPDX-2.3",
+  "creationInfo" : {
+    "created" : "2024-09-30T16:33:09Z",
+    "creators" : [ "Tool: Sonatype IQ Server - 10870" ]
+  },
+  "name" : "pkg:generic/sonatype/iq_application_testdata@b7a9f8711aa7485a859bebe2d1c29132",
+  "dataLicense" : "CC0-1.0",
+  "hasExtractedLicensingInfos" : [ {
+    "licenseId" : "LicenseRef-BSD-UNSPECIFIED",
+    "extractedText" : "BSD-UNSPECIFIED"
+  }, {
+    "licenseId" : "LicenseRef-Bouncycastle-license",
+    "extractedText" : "Bouncycastle-license"
+  }, {
+    "licenseId" : "LicenseRef-Not-Supported",
+    "extractedText" : "Not-Supported"
+  }, {
+    "licenseId" : "LicenseRef-PUBLIC-DOMAIN",
+    "extractedText" : "PUBLIC-DOMAIN"
+  }, {
+    "licenseId" : "LicenseRef-See-License-Clause",
+    "extractedText" : "See-License-Clause"
+  } ],
+  "documentNamespace" : "https://sonatype.sonatype.app/platform/ui/links/application/testdata/report/b7a9f8711aa7485a859bebe2d1c29132",
+  "packages" : [ {
+    "SPDXID" : "SPDXRef-maven-org.bouncycastle-bcprov-jdk18on-1.77",
+    "downloadLocation" : "NOASSERTION",
+    "externalRefs" : [ {
+      "comment" : "source: NVD",
+      "referenceCategory" : "SECURITY",
+      "referenceLocator" : "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-29857",
+      "referenceType" : "advisory"
+    }, {
+      "referenceCategory" : "PACKAGE-MANAGER",
+      "referenceLocator" : "pkg:maven/org.bouncycastle/bcprov-jdk18on@1.77?type=jar",
+      "referenceType" : "purl"
+    }, {
+      "comment" : "source: SONATYPE",
+      "referenceCategory" : "SECURITY",
+      "referenceLocator" : "https://sonatype.sonatype.app/platform/ui/links/vln/sonatype-2024-0946",
+      "referenceType" : "advisory"
+    }, {
+      "comment" : "source: NVD",
+      "referenceCategory" : "SECURITY",
+      "referenceLocator" : "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-30172",
+      "referenceType" : "advisory"
+    }, {
+      "comment" : "source: NVD",
+      "referenceCategory" : "SECURITY",
+      "referenceLocator" : "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-30171",
+      "referenceType" : "advisory"
+    } ],
+    "filesAnalyzed" : false,
+    "licenseConcluded" : "(LicenseRef-Bouncycastle-license AND MIT AND CC0-1.0 AND LicenseRef-PUBLIC-DOMAIN)",
+    "licenseDeclared" : "(LicenseRef-Bouncycastle-license AND MIT AND CC0-1.0 AND LicenseRef-PUBLIC-DOMAIN)",
+    "name" : "org.bouncycastle:bcprov-jdk18on",
+    "versionInfo" : "1.77"
+  }, {
+    "SPDXID" : "SPDXRef-a-name-com.h2database-h2-1.4.179",
+    "downloadLocation" : "NOASSERTION",
+    "externalRefs" : [ {
+      "referenceCategory" : "PACKAGE-MANAGER",
+      "referenceLocator" : "pkg:a-name/com.h2database%20h2@1.4.179",
+      "referenceType" : "purl"
+    } ],
+    "filesAnalyzed" : false,
+    "licenseConcluded" : "EPL-1.0",
+    "licenseDeclared" : "(EPL-1.0 AND LicenseRef-Not-Supported AND MPL-2.0 AND (EPL-1.0 OR MPL-2.0))",
+    "name" : "com.h2database h2",
+    "versionInfo" : "1.4.179"
+  }, {
+    "SPDXID" : "SPDXRef-maven-commons-io-commons-io-1.1",
+    "downloadLocation" : "NOASSERTION",
+    "externalRefs" : [ {
+      "referenceCategory" : "PACKAGE-MANAGER",
+      "referenceLocator" : "pkg:maven/commons-io/commons-io@1.1?type=jar",
+      "referenceType" : "purl"
+    }, {
+      "comment" : "source: SONATYPE",
+      "referenceCategory" : "SECURITY",
+      "referenceLocator" : "https://sonatype.sonatype.app/platform/ui/links/vln/sonatype-2018-0705",
+      "referenceType" : "advisory"
+    } ],
+    "filesAnalyzed" : false,
+    "licenseConcluded" : "(LicenseRef-See-License-Clause AND Apache-2.0)",
+    "licenseDeclared" : "(LicenseRef-See-License-Clause AND Apache-2.0)",
+    "name" : "commons-io:commons-io",
+    "versionInfo" : "1.1"
+  }, {
+    "SPDXID" : "SPDXRef-maven-com.fasterxml.jackson.core-jackson-databind-2.9.10.1",
+    "downloadLocation" : "NOASSERTION",
+    "externalRefs" : [ {
+      "comment" : "source: NVD",
+      "referenceCategory" : "SECURITY",
+      "referenceLocator" : "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-42004",
+      "referenceType" : "advisory"
+    }, {
+      "comment" : "source: NVD",
+      "referenceCategory" : "SECURITY",
+      "referenceLocator" : "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-42003",
+      "referenceType" : "advisory"
+    }, {
+      "referenceCategory" : "PACKAGE-MANAGER",
+      "referenceLocator" : "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.9.10.1?type=jar",
+      "referenceType" : "purl"
+    }, {
+      "comment" : "source: NVD",
+      "referenceCategory" : "SECURITY",
+      "referenceLocator" : "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-20330",
+      "referenceType" : "advisory"
+    }, {
+      "comment" : "source: NVD",
+      "referenceCategory" : "SECURITY",
+      "referenceLocator" : "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-36518",
+      "referenceType" : "advisory"
+    }, {
+      "comment" : "source: NVD",
+      "referenceCategory" : "SECURITY",
+      "referenceLocator" : "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-25649",
+      "referenceType" : "advisory"
+    } ],
+    "filesAnalyzed" : false,
+    "licenseConcluded" : "Apache-2.0",
+    "licenseDeclared" : "Apache-2.0",
+    "name" : "com.fasterxml.jackson.core:jackson-databind",
+    "versionInfo" : "2.9.10.1"
+  }, {
+    "SPDXID" : "SPDXRef-maven-com.h2database-h2-1.4.196",
+    "downloadLocation" : "NOASSERTION",
+    "externalRefs" : [ {
+      "comment" : "source: SONATYPE",
+      "referenceCategory" : "SECURITY",
+      "referenceLocator" : "https://sonatype.sonatype.app/platform/ui/links/vln/sonatype-2018-0859",
+      "referenceType" : "advisory"
+    }, {
+      "comment" : "source: NVD",
+      "referenceCategory" : "SECURITY",
+      "referenceLocator" : "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-23221",
+      "referenceType" : "advisory"
+    }, {
+      "comment" : "source: NVD",
+      "referenceCategory" : "SECURITY",
+      "referenceLocator" : "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42392",
+      "referenceType" : "advisory"
+    }, {
+      "referenceCategory" : "PACKAGE-MANAGER",
+      "referenceLocator" : "pkg:maven/com.h2database/h2@1.4.196?type=jar",
+      "referenceType" : "purl"
+    }, {
+      "comment" : "source: SONATYPE",
+      "referenceCategory" : "SECURITY",
+      "referenceLocator" : "https://sonatype.sonatype.app/platform/ui/links/vln/sonatype-2018-0863",
+      "referenceType" : "advisory"
+    } ],
+    "filesAnalyzed" : false,
+    "licenseConcluded" : "EPL-1.0",
+    "licenseDeclared" : "(EPL-1.0 AND LGPL-3.0 AND BSD-3-Clause AND MPL-2.0 AND (EPL-1.0 OR MPL-2.0))",
+    "name" : "com.h2database:h2",
+    "versionInfo" : "1.4.196"
+  }, {
+    "SPDXID" : "SPDXRef-maven-com.thoughtworks.xstream-xstream-1.4.16",
+    "downloadLocation" : "NOASSERTION",
+    "externalRefs" : [ {
+      "comment" : "source: NVD",
+      "referenceCategory" : "SECURITY",
+      "referenceLocator" : "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-40151",
+      "referenceType" : "advisory"
+    }, {
+      "comment" : "source: NVD",
+      "referenceCategory" : "SECURITY",
+      "referenceLocator" : "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-43859",
+      "referenceType" : "advisory"
+    }, {
+      "referenceCategory" : "PACKAGE-MANAGER",
+      "referenceLocator" : "pkg:maven/com.thoughtworks.xstream/xstream@1.4.16?type=jar",
+      "referenceType" : "purl"
+    }, {
+      "comment" : "source: NVD",
+      "referenceCategory" : "SECURITY",
+      "referenceLocator" : "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41966",
+      "referenceType" : "advisory"
+    }, {
+      "comment" : "source: NVD",
+      "referenceCategory" : "SECURITY",
+      "referenceLocator" : "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-29505",
+      "referenceType" : "advisory"
+    } ],
+    "filesAnalyzed" : false,
+    "licenseConcluded" : "(LicenseRef-BSD-UNSPECIFIED AND BSD-3-Clause)",
+    "licenseDeclared" : "(LicenseRef-BSD-UNSPECIFIED AND BSD-3-Clause)",
+    "name" : "com.thoughtworks.xstream:xstream",
+    "versionInfo" : "1.4.16"
+  }, {
+    "SPDXID" : "SPDXRef-generic-sonatype-iq-application-testdata-b7a9f8711aa7485a859bebe2d1c29132",
+    "downloadLocation" : "NOASSERTION",
+    "externalRefs" : [ {
+      "referenceCategory" : "PACKAGE-MANAGER",
+      "referenceLocator" : "pkg:generic/sonatype/iq_application_testdata@b7a9f8711aa7485a859bebe2d1c29132",
+      "referenceType" : "purl"
+    } ],
+    "filesAnalyzed" : false,
+    "licenseConcluded" : "NOASSERTION",
+    "licenseDeclared" : "NOASSERTION",
+    "name" : "sonatype:iq_application_testdata",
+    "versionInfo" : "b7a9f8711aa7485a859bebe2d1c29132"
+  } ],
+  "relationships" : [ {
+    "spdxElementId" : "SPDXRef-DOCUMENT",
+    "relationshipType" : "DESCRIBES",
+    "relatedSpdxElement" : "SPDXRef-generic-sonatype-iq-application-testdata-b7a9f8711aa7485a859bebe2d1c29132"
+  }, {
+    "spdxElementId" : "SPDXRef-generic-sonatype-iq-application-testdata-b7a9f8711aa7485a859bebe2d1c29132",
+    "relationshipType" : "DEPENDS_ON",
+    "relatedSpdxElement" : "SPDXRef-maven-com.h2database-h2-1.4.196"
+  }, {
+    "spdxElementId" : "SPDXRef-generic-sonatype-iq-application-testdata-b7a9f8711aa7485a859bebe2d1c29132",
+    "relationshipType" : "DEPENDS_ON",
+    "relatedSpdxElement" : "SPDXRef-maven-commons-io-commons-io-1.1"
+  }, {
+    "spdxElementId" : "SPDXRef-generic-sonatype-iq-application-testdata-b7a9f8711aa7485a859bebe2d1c29132",
+    "relationshipType" : "DEPENDS_ON",
+    "relatedSpdxElement" : "SPDXRef-maven-com.fasterxml.jackson.core-jackson-databind-2.9.10.1"
+  }, {
+    "spdxElementId" : "SPDXRef-generic-sonatype-iq-application-testdata-b7a9f8711aa7485a859bebe2d1c29132",
+    "relationshipType" : "DEPENDS_ON",
+    "relatedSpdxElement" : "SPDXRef-maven-org.bouncycastle-bcprov-jdk18on-1.77"
+  }, {
+    "spdxElementId" : "SPDXRef-generic-sonatype-iq-application-testdata-b7a9f8711aa7485a859bebe2d1c29132",
+    "relationshipType" : "DEPENDS_ON",
+    "relatedSpdxElement" : "SPDXRef-maven-com.thoughtworks.xstream-xstream-1.4.16"
+  } ]
+}
