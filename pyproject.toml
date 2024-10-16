@@ -1,0 +1,64 @@
+#
+# Copyright (c) 2023-present Sonatype, Inc. All rights reserved.
+# "Sonatype" is a trademark of Sonatype, Inc.
+#
+
+[tool.poetry]
+name = "cs-di-doctor-dolphin-workflow"
+version = "0.1.0"
+description = "A workflow handler to create tasks which may be assigned to CS personal based on concerns identified by Doctor Dolphin"
+authors = ["Richard Panman <rpanman@sonatype.com>"]
+packages = [{ include = "dd_workflow" }]
+
+[tool.poetry.dependencies]
+python = ">=3.10, <3.11"
+types-requests = ">=2.22,<3"
+databricks-sql-connector = "^3.1.0"
+requests-mock = "^1.11.0"
+datadog-api-client = "^2.15.0"
+ddtrace = ">=2.0,<3"
+schedule = "^1.2.0"
+
+[tool.poetry.group.dev.dependencies]
+pylint = "2.17.2"
+mutmut = "2.4.3"
+black = "^23.3.0"
+mypy = "^1.4.0"
+tox = "^4.6.3"
+pytest-mypy = "^0.10.3"
+pre-commit = "^3.3.3"
+pytest-mock = "^3.11.1"
+python-dotenv = "^1.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mutmut]
+paths_to_mutate = "dd_workflow"
+
+[tool.mypy]
+files = ["dd_workflow/**/*.py", "tests/**/*.py"]
+show_absolute_path = true
+implicit_reexport = true
+exclude = ["venv", ".tox"]
+strict = true
+allow_untyped_calls = true
+
+[tool.pytest.ini_options]
+# addopts = "--cov=. --cov-report term-missing --cov-report xml"
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+isolated_build = True
+envlist = python3.10,python3.11
+
+[testenv]
+skip_install = True
+allowlist_externals = poetry
+commands_pre =
+       poetry install -v
+commands =
+       poetry run pytest
+"""
