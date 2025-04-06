@@ -34,7 +34,7 @@ steps:
 - task: NexusIqPipelineTask@2
   inputs:
     nexusIqService: 'My-IQ'
-    applicationId: 'testdata'
+    applicationId: 'kt-azure-test-01'
     stage: 'Build'
     scanTargets: '*.jar'
     enableCallflow: true
