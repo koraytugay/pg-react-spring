@@ -27,7 +27,7 @@ steps:
     jdkArchitectureOption: 'x64'
     jdkSourceOption: 'PreInstalled'
 
-- task: SonatypeCliSetup
+- task: SonatypeCliSetup@2
   inputs:
     iqCliVersion: 2.0.0
 
