@@ -27,6 +27,10 @@ steps:
     jdkArchitectureOption: 'x64'
     jdkSourceOption: 'PreInstalled'
 
+- task: SonatypeCliSetup
+  inputs:
+    iqCliVersion: 2.0.0
+
 - task: NexusIqPipelineTask@2
   inputs:
     nexusIqService: 'My-IQ'
