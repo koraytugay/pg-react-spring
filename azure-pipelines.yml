@@ -29,7 +29,8 @@ steps:
 
 - task: SonatypeCliSetup@2
   inputs:
-    cliVersion: 1.185.0-01
+    # cliVersion: 1.185.0-01
+    cliVersion: latest
 
 - task: NexusIqPipelineTask@2
   inputs:
