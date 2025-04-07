@@ -29,7 +29,7 @@ steps:
 
 - task: SonatypeCliSetup@2
   inputs:
-    iqCliVersion: 2.0.0
+    cliVersion: 2.0.0
 
 - task: NexusIqPipelineTask@2
   inputs:
