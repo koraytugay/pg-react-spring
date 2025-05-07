@@ -39,3 +39,6 @@ steps:
     scanTargets: '*.jar'
     enableCallflow: true
     callflowNamespaces: com.sonatype
+
+- script: sleep 60
+  displayName: 'Sleep for 60 seconds'
