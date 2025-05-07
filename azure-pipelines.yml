@@ -37,7 +37,7 @@ steps:
     applicationId: 'kt-azure-test-01'
     stage: 'Build'
     scanTargets: '*.jar'
-    enableCallflow: true
+    enableCallflow: false
     callflowNamespaces: com.sonatype
 
 - script: sleep 60
