@@ -12,10 +12,6 @@ pool:
 steps:
 - checkout: self
   persistCredentials: true
-- script: |
-    echo "Token is: $(System.AccessToken)"
-  env:
-    SYSTEM_ACCESSTOKEN: $(System.AccessToken)
 
 - task: Maven@3
   inputs:
@@ -39,6 +35,8 @@ steps:
     cliVersion: 1.185.0-01
 
 - task: NexusIqPipelineTask@2
+  env:
+    SYSTEM_ACCESSTOKEN: $(System.AccessToken)
   inputs:
     nexusIqService: 'My-IQ'
     applicationId: 'kt-azure-test-01'
