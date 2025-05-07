@@ -10,6 +10,13 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- checkout: self
+  persistCredentials: true
+- script: |
+    echo "Token is: $(System.AccessToken)"
+  env:
+    SYSTEM_ACCESSTOKEN: $(System.AccessToken)
+
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
