@@ -9,6 +9,11 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+resources:
+  repositories:
+    - repository: self     # explicitly declare “self”
+      type: git
+
 steps:
 - checkout: self
   persistCredentials: true
