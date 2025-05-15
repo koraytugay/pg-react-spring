@@ -50,7 +50,7 @@ steps:
     scanTargets: '*.jar'
     enableCallflow: false
     callflowNamespaces: com.sonatype
-    acceptIqServerSelfSignedCertificates: true
+    # acceptIqServerSelfSignedCertificates: true
 
 - script: sleep 60
   displayName: 'Sleep for 60 seconds'
