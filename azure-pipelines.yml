@@ -44,13 +44,13 @@ steps:
     SYSTEM_ACCESSTOKEN: $(System.AccessToken)
   inputs:
     # nexusIqService: 'My-IQ'
-    nexusIqService: 'self-signed-bad-ssl'
+    nexusIqService: 'int-test-sonatype'
     applicationId: 'kt-azure-test-01'
     stage: 'Build'
     scanTargets: '*.jar'
-    enableCallflow: false
-    callflowNamespaces: com.sonatype
-    # acceptIqServerSelfSignedCertificates: true
+    # enableCallflow: false
+    # callflowNamespaces: com.sonatype
+    acceptIqServerSelfSignedCertificates: true
 
 - script: sleep 60
   displayName: 'Sleep for 60 seconds'
