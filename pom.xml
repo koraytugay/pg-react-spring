@@ -40,7 +40,14 @@
     <groupId>com.h2database</groupId>
     <artifactId>h2</artifactId>
     <version>2.2.220</version>
-   
 </dependency>
+
+   <dependency>
+    <groupId>com.google.guava</groupId>
+    <artifactId>guava</artifactId>
+    <version>14.0</version>
+</dependency>
+
+   
 </dependencies>
 </project>
