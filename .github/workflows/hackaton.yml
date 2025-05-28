@@ -3,7 +3,7 @@ name: Use Hello World Action
 on:
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   run-hello:
