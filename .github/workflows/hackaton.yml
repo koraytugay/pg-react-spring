@@ -19,7 +19,7 @@ jobs:
       - name: Run Maven Dependency Tree
         id: dependency_tree_step # Give this step an ID to reference its outputs (if any, though not strictly needed here)
         run: |
-          mvn dependency:tree > dependency-tree.txt 2>&1
+          mvn -B dependency:tree > dependency-tree.txt 2>&1
 
       - name: Upload Dependency Tree Artifact
         uses: actions/upload-artifact@v4
