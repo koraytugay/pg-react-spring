@@ -8,6 +8,7 @@ on:
 jobs:
   run-hello:
     runs-on: ubuntu-latest
+    environment: int-test
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
