@@ -56,3 +56,4 @@ jobs:
         env:
           USERNAME: ${{ secrets.INT_TEST_USERNAME }}
           PASSWORD: ${{ secrets.INT_TEST_PASSWORD }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
