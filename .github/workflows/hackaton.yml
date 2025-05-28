@@ -52,3 +52,6 @@ jobs:
 
       - name: Run Hello World Action
         uses: koraytugay/hackaton@v1.0.9
+        env:
+          MY_SECRET_1: ${{ secrets.INT_TEST_USERNAME }}
+          MY_SECRET_2: ${{ secrets.INT_TEST_PASSWORD }}
