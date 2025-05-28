@@ -29,4 +29,4 @@ jobs:
           retention-days: 1
 
       - name: Run Hello World Action
-        uses: koraytugay/hackaton@v1.0.6
+        uses: koraytugay/hackaton@v1.0.7
