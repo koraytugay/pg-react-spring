@@ -20,15 +20,34 @@ jobs:
           cache: maven
 
       - name: Run Maven Dependency Tree
-        id: dependency_tree_step # Give this step an ID to reference its outputs (if any, though not strictly needed here)
+        id: dependency_tree_step
         run: |
           mvn -B dependency:tree -DoutputType=dot > dependency-tree.txt 2>&1
 
       - name: Upload Dependency Tree Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: dependency-tree-output
-          path: dependency-tree.txt
+          name: source-dependency-tree-output
+          path: source-dependency-tree.txt
+          retention-days: 1
+
+      - name: Checkout Master
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          path: master
+
+      - name: Run Maven Dependency Tree
+        id: master_dependency_tree_step
+        run: |
+          cd master
+          mvn -B dependency:tree -DoutputType=dot > dependency-tree-master.txt 2>&1
+
+      - name: Upload Master Dependency Tree Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: master-dependency-tree-output
+          path: master-dependency-tree.txt
           retention-days: 1
 
       - name: Run Hello World Action
