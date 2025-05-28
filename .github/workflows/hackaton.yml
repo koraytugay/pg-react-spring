@@ -6,7 +6,27 @@ jobs:
   run-hello:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Run Maven Dependency Tree
+        id: dependency_tree_step # Give this step an ID to reference its outputs (if any, though not strictly needed here)
+        run: |
+          mvn dependency:tree > dependency-tree.txt 2>&1
+
+      - name: Upload Dependency Tree Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dependency-tree-output
+          path: dependency-tree.txt
+          retention-days: 1
 
       - name: Run Hello World Action
         uses: koraytugay/hackaton@v1.0.1
