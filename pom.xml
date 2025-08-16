@@ -18,7 +18,7 @@
 
 <dependencies>
    
-<!--  <dependency>
+<!-- <!--  <dependency>
   <groupId>com.fasterxml.jackson.core</groupId>
   <artifactId>jackson-core</artifactId>
   <version>2.14.3</version>
@@ -40,6 +40,6 @@
     <groupId>org.springframework.data</groupId>
     <artifactId>spring-data-jpa</artifactId>
     <version>2.0.12.RELEASE</version>
-</dependency>
+</dependency> -->
 </dependencies>
 </project>
