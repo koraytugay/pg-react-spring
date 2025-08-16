@@ -54,7 +54,7 @@ jobs:
           retention-days: 1
 
       - name: Run Hello World Action
-        uses: koraytugay/hackaton@v1.0.36
+        uses: koraytugay/hackaton@v1.0.37
         env:
           USERNAME: ${{ secrets.INT_TEST_USERNAME }}
           PASSWORD: ${{ secrets.INT_TEST_PASSWORD }}
