@@ -30,6 +30,9 @@
   <version>2.14.2</version>
 </dependency>
 
+<!--        <version>2.19.2</version> -->
+
+
    <dependency>
     <groupId>com.h2database</groupId>
     <artifactId>h2</artifactId>
