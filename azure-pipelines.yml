@@ -48,7 +48,7 @@ steps:
     applicationId: 'kt-azure-test-03'
     stage: 'Build'
     # scanTargets: '*.jar'
-    scanTargets: './kt-js-reachable'
+    scanTargets: '**/kt-js-reachable/**'
     # enableCallflow: false
     # callflowNamespaces: com.sonatype
     acceptIqServerSelfSignedCertificates: true
