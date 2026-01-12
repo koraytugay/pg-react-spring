@@ -45,7 +45,7 @@ steps:
   inputs:
     # nexusIqService: 'My-IQ'
     nexusIqService: 'int-test-sonatype'
-    applicationId: 'kt-azure-test-11'
+    applicationId: 'kt-azure-test-12'
     stage: 'Build'
     # scanTargets: '*.jar'
     scanTargets: '**/kt-js-reachable/**, *.jar'
@@ -57,7 +57,7 @@ steps:
     enableReachabilityJs: true
     reachabilityJsSources: 'app.js'
     # reachabilityJsSources: 'no-no-no.js'
-    reachabilityJsExcludes: 'node_modules/** test/** *.test.js'
+    # reachabilityJsExcludes: 'node_modules/** test/** *.test.js'
     reachabilityJsProjectRoot: '$(Build.SourcesDirectory)/kt-js-reachable'
     ignoreReachabilityErrors: true
 
