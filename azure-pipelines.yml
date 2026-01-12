@@ -35,9 +35,9 @@ steps:
     jdkArchitectureOption: 'x64'
     jdkSourceOption: 'PreInstalled'
 
-- task: SonatypeCliSetup@2
-  inputs:
-    cliVersion: 1.185.0-01
+# - task: SonatypeCliSetup@2
+#   inputs:
+#     cliVersion: 1.185.0-01
 
 - task: NexusIqPipelineTask@2
   env:
