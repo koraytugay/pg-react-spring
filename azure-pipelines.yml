@@ -45,9 +45,10 @@ steps:
   inputs:
     # nexusIqService: 'My-IQ'
     nexusIqService: 'int-test-sonatype'
-    applicationId: 'kt-azure-test-02'
+    applicationId: 'kt-azure-test-03'
     stage: 'Build'
-    scanTargets: '*.jar'
+    # scanTargets: '*.jar'
+    scanTargets: '$(Build.SourcesDirectory)/kt-js-reachable'
     # enableCallflow: false
     # callflowNamespaces: com.sonatype
     acceptIqServerSelfSignedCertificates: true
