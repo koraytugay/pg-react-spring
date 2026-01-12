@@ -45,7 +45,7 @@ steps:
   inputs:
     # nexusIqService: 'My-IQ'
     nexusIqService: 'int-test-sonatype'
-    applicationId: 'kt-azure-test-04'
+    applicationId: 'kt-azure-test-05'
     stage: 'Build'
     # scanTargets: '*.jar'
     scanTargets: '**/kt-js-reachable/**'
@@ -53,7 +53,7 @@ steps:
     # callflowNamespaces: com.sonatype
     acceptIqServerSelfSignedCertificates: true
     enableReachabilityJs: true
-    reachabilityJsSources: '*.js app.js'
+    # reachabilityJsSources: 'app.js'
     reachabilityJsExcludes: 'node_modules/** test/** *.test.js'
     reachabilityJsProjectRoot: '$(Build.SourcesDirectory)/kt-js-reachable'
 
