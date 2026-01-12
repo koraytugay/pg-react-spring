@@ -45,7 +45,7 @@ steps:
   inputs:
     # nexusIqService: 'My-IQ'
     nexusIqService: 'int-test-sonatype'
-    applicationId: 'kt-azure-test-07'
+    applicationId: 'kt-azure-test-08'
     stage: 'Build'
     # scanTargets: '*.jar'
     scanTargets: '**/kt-js-reachable/**'
@@ -57,7 +57,7 @@ steps:
     reachabilityJsSources: 'no-no-no.js'
     reachabilityJsExcludes: 'node_modules/** test/** *.test.js'
     reachabilityJsProjectRoot: '$(Build.SourcesDirectory)/kt-js-reachable'
-    ignore-reachability-errors: true
+    ignoreReachabilityErrors: true
 
 - script: sleep 60
   displayName: 'Sleep for 60 seconds'
