@@ -45,7 +45,7 @@ steps:
   inputs:
     # nexusIqService: 'My-IQ'
     nexusIqService: 'int-test-sonatype'
-    applicationId: 'kt-azure-test-12'
+    applicationId: 'kt-azure-test-13'
     stage: 'Build'
     # scanTargets: '*.jar'
     scanTargets: '**/kt-js-reachable/**, *.jar'
