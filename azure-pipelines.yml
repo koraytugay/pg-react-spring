@@ -39,29 +39,29 @@ steps:
 #   inputs:
 #     cliVersion: 1.185.0-01
 
-- task: NexusIqPipelineTask@3
-  env:
-    SYSTEM_ACCESSTOKEN: $(System.AccessToken)
-  inputs:
-    # nexusIqService: 'My-IQ'
-    nexusIqService: 'int-test-sonatype'
-    # nexusIqService: 'local-iq'
-    applicationId: 'kt-azure-test-15'
-    stage: 'Build'
-    # scanTargets: '*.jar'
-    scanTargets: '**/kt-js-reachable/**, *.jar'
-    # enableCallflow: false
-    # callflowNamespaces: com.sonatype
-    enableReachability: 'false'
-    reachabilityNamespaces: 'com.sonatype'
-    reachabilityEntrypointStrategy: 'PUBLIC_CONCRETE'
-    acceptIqServerSelfSignedCertificates: true
-    enableReachabilityJs: true
-    reachabilityJsSources: '*app*.js'
-    # reachabilityJsSources: 'no-no-no.js'
-    # reachabilityJsExcludes: 'node_modules/** test/** *.test.js'
-    reachabilityJsProjectRoot: '$(Build.SourcesDirectory)/kt-js-reachable'
-    ignoreReachabilityErrors: false
-
+#- task: NexusIqPipelineTask@3
+#  env:
+#    SYSTEM_ACCESSTOKEN: $(System.AccessToken)
+#  inputs:
+#    # nexusIqService: 'My-IQ'
+#    nexusIqService: 'int-test-sonatype'
+#    # nexusIqService: 'local-iq'
+#    applicationId: 'kt-azure-test-15'
+#    stage: 'Build'
+#    # scanTargets: '*.jar'
+#    scanTargets: '**/kt-js-reachable/**, *.jar'
+#    # enableCallflow: false
+#    # callflowNamespaces: com.sonatype
+#    enableReachability: 'false'
+#    reachabilityNamespaces: 'com.sonatype'
+#    reachabilityEntrypointStrategy: 'PUBLIC_CONCRETE'
+#    acceptIqServerSelfSignedCertificates: true
+#    enableReachabilityJs: true
+#    reachabilityJsSources: '*app*.js'
+#    # reachabilityJsSources: 'no-no-no.js'
+#    # reachabilityJsExcludes: 'node_modules/** test/** *.test.js'
+#    reachabilityJsProjectRoot: '$(Build.SourcesDirectory)/kt-js-reachable'
+#    ignoreReachabilityErrors: false
+#
 - script: sleep 60
   displayName: 'Sleep for 60 seconds'
