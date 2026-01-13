@@ -1,4 +1,4 @@
-malformed {
+{
   "name": "vulnerable-test-app",
   "version": "1.0.0",
   "description": "A test project with vulnerable dependencies for security testing",
