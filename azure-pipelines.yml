@@ -44,8 +44,8 @@ steps:
     SYSTEM_ACCESSTOKEN: $(System.AccessToken)
   inputs:
     # nexusIqService: 'My-IQ'
-    # nexusIqService: 'int-test-sonatype'
-    nexusIqService: 'local-iq'
+    nexusIqService: 'int-test-sonatype'
+    # nexusIqService: 'local-iq'
     applicationId: 'kt-azure-test-15'
     stage: 'Build'
     # scanTargets: '*.jar'
@@ -57,7 +57,7 @@ steps:
     reachabilityEntrypointStrategy: 'PUBLIC_CONCRETE'
     acceptIqServerSelfSignedCertificates: true
     enableReachabilityJs: true
-    reachabilityJsSources: '*apdfasfdsafasp*.js'
+    reachabilityJsSources: '*app*.js'
     # reachabilityJsSources: 'no-no-no.js'
     # reachabilityJsExcludes: 'node_modules/** test/** *.test.js'
     reachabilityJsProjectRoot: '$(Build.SourcesDirectory)/kt-js-reachable'
