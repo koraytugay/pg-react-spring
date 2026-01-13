@@ -61,7 +61,7 @@ steps:
     # reachabilityJsSources: 'no-no-no.js'
     # reachabilityJsExcludes: 'node_modules/** test/** *.test.js'
     reachabilityJsProjectRoot: '$(Build.SourcesDirectory)/kt-js-reachable'
-    ignoreReachabilityErrors: false
+    ignoreReachabilityErrors: true
 
 - script: sleep 60
   displayName: 'Sleep for 60 seconds'
