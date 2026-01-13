@@ -44,7 +44,8 @@ steps:
     SYSTEM_ACCESSTOKEN: $(System.AccessToken)
   inputs:
     # nexusIqService: 'My-IQ'
-    nexusIqService: 'int-test-sonatype'
+    # nexusIqService: 'int-test-sonatype'
+    nexusIqService: 'local-iq'
     applicationId: 'kt-azure-test-15'
     stage: 'Build'
     # scanTargets: '*.jar'
