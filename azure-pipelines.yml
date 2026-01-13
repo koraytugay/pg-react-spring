@@ -57,7 +57,7 @@ steps:
     reachabilityEntrypointStrategy: 'PUBLIC_CONCRETE'
     acceptIqServerSelfSignedCertificates: true
     enableReachabilityJs: true
-    reachabilityJsSources: '*app*.js'
+    reachabilityJsSources: '*apdfasfdsafasp*.js'
     # reachabilityJsSources: 'no-no-no.js'
     # reachabilityJsExcludes: 'node_modules/** test/** *.test.js'
     reachabilityJsProjectRoot: '$(Build.SourcesDirectory)/kt-js-reachable'
