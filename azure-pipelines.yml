@@ -44,7 +44,7 @@ steps:
     SYSTEM_ACCESSTOKEN: $(System.AccessToken)
   inputs:
     cliDownloadUrl: https://repo.sonatype.com/repository/zion-private-releases/com/sonatype/insight/brain/nexus-iq-cli/2.8.3-01/nexus-iq-cli-2.8.3-01.jar
-    cliDownloadAuth: $(MY_CLI_DOWNLOAD_SECRET)  # ← Also use $(VAR) syntax for secrets
+    cliDownloadAuth: $(MY_CLI_DOWNLOAD_SECRET)
     nexusIqService: 'int-test-sonatype'
     applicationId: 'kt-azure-test-15'
     stage: 'Build'
