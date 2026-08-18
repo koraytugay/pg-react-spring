@@ -54,31 +54,43 @@ steps:
     enableReachability: false
     acceptIqServerSelfSignedCertificates: true
 
-- task: NexusIqPipelineTask@3
-  env:
-    SYSTEM_ACCESSTOKEN: $(System.AccessToken)
+- task: SonatypeFetchSbom@3
+  displayName: 'Sonatype IQ Fetch SBOM'
+  name: sonatypeFetchSbomTask
   inputs:
-    cliDownloadUrl: https://repo.sonatype.com/repository/zion-private-releases/com/sonatype/insight/brain/nexus-iq-cli/2.8.3-01/nexus-iq=cli-2.8.3-01.jar
-    cliDownloadAuth: ${MY_CLI_DOWNLOAD_SECRET}
-    # nexusIqService: 'My-IQ'
     nexusIqService: 'int-test-sonatype'
-    # nexusIqService: 'local-iq'
-    applicationId: 'kt-azure-test-15'
-    stage: 'Build'
-    scanTargets: '*.jar'
-    # scanTargets: '**/kt-js-reachable/**, *.jar'
-    # enableCallflow: false
-    # callflowNamespaces: com.sonatype
-    enableReachability: 'false'
-    # reachabilityNamespaces: 'com.sonatype'
-    # reachabilityEntrypointStrategy: 'PUBLIC_CONCRETE'
-    acceptIqServerSelfSignedCertificates: true
-    # enableReachabilityJs: true
-    # reachabilityJsSources: '*app*.js'
-    # reachabilityJsSources: 'no-no-no.js'
-    # reachabilityJsExcludes: 'node_modules/** test/** *.test.js'
-    # reachabilityJsProjectRoot: '$(Build.SourcesDirectory)/kt-js-reachable'
-    # ignoreReachabilityErrors: false
+    applicationId: 'kt-custom-app'
+    scanId: '$(sonatypePolicyEvaluation.scanId)'
+    sbomStandard: cycloneDx
+    sbomVersion: 1.6
+    sbomFormat: xml
+  condition: succeededOrFailed()
 
-- script: sleep 60
-  displayName: 'Sleep for 60 seconds'
+# - task: NexusIqPipelineTask@3
+#   env:
+#     SYSTEM_ACCESSTOKEN: $(System.AccessToken)
+#   inputs:
+#     cliDownloadUrl: https://repo.sonatype.com/repository/zion-private-releases/com/sonatype/insight/brain/nexus-iq-cli/2.8.3-01/nexus-iq=cli-2.8.3-01.jar
+#     cliDownloadAuth: ${MY_CLI_DOWNLOAD_SECRET}
+#     # nexusIqService: 'My-IQ'
+#     nexusIqService: 'int-test-sonatype'
+#     # nexusIqService: 'local-iq'
+#     applicationId: 'kt-azure-test-15'
+#     stage: 'Build'
+#     scanTargets: '*.jar'
+#     # scanTargets: '**/kt-js-reachable/**, *.jar'
+#     # enableCallflow: false
+#     # callflowNamespaces: com.sonatype
+#     enableReachability: 'false'
+#     # reachabilityNamespaces: 'com.sonatype'
+#     # reachabilityEntrypointStrategy: 'PUBLIC_CONCRETE'
+#     acceptIqServerSelfSignedCertificates: true
+#     # enableReachabilityJs: true
+#     # reachabilityJsSources: '*app*.js'
+#     # reachabilityJsSources: 'no-no-no.js'
+#     # reachabilityJsExcludes: 'node_modules/** test/** *.test.js'
+#     # reachabilityJsProjectRoot: '$(Build.SourcesDirectory)/kt-js-reachable'
+#     # ignoreReachabilityErrors: false
+
+# - script: sleep 60
+#   displayName: 'Sleep for 60 seconds'
