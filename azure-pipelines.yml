@@ -47,7 +47,8 @@ steps:
     # cliDownloadUrl: https://repo.sonatype.com/repository/zion-private-releases/com/sonatype/insight/brain/nexus-iq-cli/2.8.3-01/nexus-iq-cli-2.8.3-01.jar
     # cliDownloadAuth: $(MY_CLI_DOWNLOAD_SECRET)
     # cliDownloadAuth: wrong:password
-    nexusIqService: 'int-test-sonatype'
+    # nexusIqService: 'int-test-sonatype'
+    nexusIqService: 'My-IQ'
     # applicationId: 'kt-azure-test-15'
     applicationId: 'kt-custom-app'
     stage: 'Build'
@@ -59,7 +60,8 @@ steps:
   displayName: 'Sonatype IQ Fetch SBOM'
   name: sonatypeFetchSbomTask
   inputs:
-    nexusIqService: 'int-test-sonatype'
+    # nexusIqService: 'int-test-sonatype'
+    nexusIqService: 'My-IQ'
     applicationId: 'kt-custom-app'
     scanId: '$(sonatypePolicyEvaluation.scanId)'
     sbomStandard: cycloneDx
