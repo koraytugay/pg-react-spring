@@ -47,7 +47,8 @@ steps:
     # cliDownloadAuth: $(MY_CLI_DOWNLOAD_SECRET)
     # cliDownloadAuth: wrong:password
     nexusIqService: 'int-test-sonatype'
-    applicationId: 'kt-azure-test-15'
+    # applicationId: 'kt-azure-test-15'
+    applicationId: 'kt-custom-app'
     stage: 'Build'
     scanTargets: '*.jar'
     enableReachability: false
