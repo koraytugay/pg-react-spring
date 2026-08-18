@@ -40,6 +40,7 @@ steps:
 #     cliVersion: 1.185.0-01
 
 - task: SonatypeEvaluate@3
+  name: sonatypePolicyEvaluation
   env:
     SYSTEM_ACCESSTOKEN: $(System.AccessToken)
   inputs:
