@@ -65,7 +65,7 @@ steps:
     applicationId: 'kt-test'
     scanId: '$(sonatypePolicyEvaluation.scanId)'
     sbomStandard: cycloneDx
-    sbomVersion: 1.6
+    sbomVersion: 1.7
     sbomFormat: xml
   condition: succeededOrFailed()
 
