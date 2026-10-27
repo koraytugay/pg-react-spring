@@ -52,7 +52,8 @@ steps:
     # applicationId: 'kt-azure-test-15'
     applicationId: 'kt-custom-app'
     stage: 'Build'
-    scanTargets: '*.jar'
+    # scanTargets: '*.jar'
+    scanTargets: 'myspdx3.spdx.json'
     enableReachability: false
     acceptIqServerSelfSignedCertificates: true
 
