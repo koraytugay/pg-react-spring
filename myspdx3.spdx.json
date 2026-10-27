@@ -1,0 +1,627 @@
+{
+  "@context": "https://spdx.org/rdf/3.0.1/spdx-context.jsonld",
+  "@graph": [
+    {
+      "type": "SpdxDocument",
+      "spdxId": "https://example.org/acme-shop/document",
+      "creationInfo": "_:creationInfo1",
+      "name": "acme-shop 1.0.0 SBOM",
+      "profileConformance": [
+        "core",
+        "software"
+      ],
+      "rootElement": [
+        "https://example.org/acme-shop/pkg/acme-shop"
+      ],
+      "element": [
+        "https://example.org/acme-shop/pkg/acme-shop",
+        "https://example.org/acme-shop/pkg/0",
+        "https://example.org/acme-shop/pkg/1",
+        "https://example.org/acme-shop/pkg/2",
+        "https://example.org/acme-shop/pkg/3",
+        "https://example.org/acme-shop/pkg/4",
+        "https://example.org/acme-shop/pkg/5",
+        "https://example.org/acme-shop/pkg/6",
+        "https://example.org/acme-shop/pkg/7",
+        "https://example.org/acme-shop/pkg/8",
+        "https://example.org/acme-shop/pkg/9",
+        "https://example.org/acme-shop/pkg/10",
+        "https://example.org/acme-shop/pkg/11",
+        "https://example.org/acme-shop/pkg/12",
+        "https://example.org/acme-shop/pkg/13",
+        "https://example.org/acme-shop/pkg/14",
+        "https://example.org/acme-shop/pkg/15",
+        "https://example.org/acme-shop/pkg/16",
+        "https://example.org/acme-shop/pkg/17",
+        "https://example.org/acme-shop/pkg/18",
+        "https://example.org/acme-shop/pkg/19"
+      ],
+      "namespaceMap": [
+        {
+          "type": "NamespaceMap",
+          "prefix": "acme",
+          "namespace": "https://example.org/acme-shop/"
+        }
+      ]
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.org/acme-shop/pkg/acme-shop",
+      "creationInfo": "_:creationInfo1",
+      "name": "acme-shop",
+      "software_packageVersion": "1.0.0",
+      "software_primaryPurpose": "application",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "packageUrl",
+          "identifier": "pkg:generic/acme-shop@1.0.0"
+        }
+      ]
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.org/acme-shop/pkg/0",
+      "creationInfo": "_:creationInfo1",
+      "name": "log4j-core",
+      "software_packageVersion": "2.14.1",
+      "software_primaryPurpose": "library",
+      "software_packageUrl": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "packageUrl",
+          "identifier": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.1"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "https://example.org/acme-shop/rel/0",
+      "creationInfo": "_:creationInfo1",
+      "relationshipType": "dependsOn",
+      "from": "https://example.org/acme-shop/pkg/acme-shop",
+      "to": [
+        "https://example.org/acme-shop/pkg/0"
+      ],
+      "completeness": "complete"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.org/acme-shop/pkg/1",
+      "creationInfo": "_:creationInfo1",
+      "name": "log4j-api",
+      "software_packageVersion": "2.14.1",
+      "software_primaryPurpose": "library",
+      "software_packageUrl": "pkg:maven/org.apache.logging.log4j/log4j-api@2.14.1",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "packageUrl",
+          "identifier": "pkg:maven/org.apache.logging.log4j/log4j-api@2.14.1"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "https://example.org/acme-shop/rel/1",
+      "creationInfo": "_:creationInfo1",
+      "relationshipType": "dependsOn",
+      "from": "https://example.org/acme-shop/pkg/acme-shop",
+      "to": [
+        "https://example.org/acme-shop/pkg/1"
+      ],
+      "completeness": "complete"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.org/acme-shop/pkg/2",
+      "creationInfo": "_:creationInfo1",
+      "name": "jackson-databind",
+      "software_packageVersion": "2.9.8",
+      "software_primaryPurpose": "library",
+      "software_packageUrl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.9.8",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "packageUrl",
+          "identifier": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.9.8"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "https://example.org/acme-shop/rel/2",
+      "creationInfo": "_:creationInfo1",
+      "relationshipType": "dependsOn",
+      "from": "https://example.org/acme-shop/pkg/acme-shop",
+      "to": [
+        "https://example.org/acme-shop/pkg/2"
+      ],
+      "completeness": "complete"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.org/acme-shop/pkg/3",
+      "creationInfo": "_:creationInfo1",
+      "name": "commons-collections",
+      "software_packageVersion": "3.2.1",
+      "software_primaryPurpose": "library",
+      "software_packageUrl": "pkg:maven/commons-collections/commons-collections@3.2.1",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "packageUrl",
+          "identifier": "pkg:maven/commons-collections/commons-collections@3.2.1"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "https://example.org/acme-shop/rel/3",
+      "creationInfo": "_:creationInfo1",
+      "relationshipType": "dependsOn",
+      "from": "https://example.org/acme-shop/pkg/acme-shop",
+      "to": [
+        "https://example.org/acme-shop/pkg/3"
+      ],
+      "completeness": "complete"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.org/acme-shop/pkg/4",
+      "creationInfo": "_:creationInfo1",
+      "name": "spring-core",
+      "software_packageVersion": "5.3.17",
+      "software_primaryPurpose": "library",
+      "software_packageUrl": "pkg:maven/org.springframework/spring-core@5.3.17",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "packageUrl",
+          "identifier": "pkg:maven/org.springframework/spring-core@5.3.17"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "https://example.org/acme-shop/rel/4",
+      "creationInfo": "_:creationInfo1",
+      "relationshipType": "dependsOn",
+      "from": "https://example.org/acme-shop/pkg/acme-shop",
+      "to": [
+        "https://example.org/acme-shop/pkg/4"
+      ],
+      "completeness": "complete"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.org/acme-shop/pkg/5",
+      "creationInfo": "_:creationInfo1",
+      "name": "spring-webmvc",
+      "software_packageVersion": "5.3.17",
+      "software_primaryPurpose": "library",
+      "software_packageUrl": "pkg:maven/org.springframework/spring-webmvc@5.3.17",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "packageUrl",
+          "identifier": "pkg:maven/org.springframework/spring-webmvc@5.3.17"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "https://example.org/acme-shop/rel/5",
+      "creationInfo": "_:creationInfo1",
+      "relationshipType": "dependsOn",
+      "from": "https://example.org/acme-shop/pkg/acme-shop",
+      "to": [
+        "https://example.org/acme-shop/pkg/5"
+      ],
+      "completeness": "complete"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.org/acme-shop/pkg/6",
+      "creationInfo": "_:creationInfo1",
+      "name": "snakeyaml",
+      "software_packageVersion": "1.26",
+      "software_primaryPurpose": "library",
+      "software_packageUrl": "pkg:maven/org.yaml/snakeyaml@1.26",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "packageUrl",
+          "identifier": "pkg:maven/org.yaml/snakeyaml@1.26"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "https://example.org/acme-shop/rel/6",
+      "creationInfo": "_:creationInfo1",
+      "relationshipType": "dependsOn",
+      "from": "https://example.org/acme-shop/pkg/acme-shop",
+      "to": [
+        "https://example.org/acme-shop/pkg/6"
+      ],
+      "completeness": "complete"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.org/acme-shop/pkg/7",
+      "creationInfo": "_:creationInfo1",
+      "name": "guava",
+      "software_packageVersion": "31.1-jre",
+      "software_primaryPurpose": "library",
+      "software_packageUrl": "pkg:maven/com.google.guava/guava@31.1-jre",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "packageUrl",
+          "identifier": "pkg:maven/com.google.guava/guava@31.1-jre"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "https://example.org/acme-shop/rel/7",
+      "creationInfo": "_:creationInfo1",
+      "relationshipType": "dependsOn",
+      "from": "https://example.org/acme-shop/pkg/acme-shop",
+      "to": [
+        "https://example.org/acme-shop/pkg/7"
+      ],
+      "completeness": "complete"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.org/acme-shop/pkg/8",
+      "creationInfo": "_:creationInfo1",
+      "name": "commons-io",
+      "software_packageVersion": "2.11.0",
+      "software_primaryPurpose": "library",
+      "software_packageUrl": "pkg:maven/commons-io/commons-io@2.11.0",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "packageUrl",
+          "identifier": "pkg:maven/commons-io/commons-io@2.11.0"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "https://example.org/acme-shop/rel/8",
+      "creationInfo": "_:creationInfo1",
+      "relationshipType": "dependsOn",
+      "from": "https://example.org/acme-shop/pkg/acme-shop",
+      "to": [
+        "https://example.org/acme-shop/pkg/8"
+      ],
+      "completeness": "complete"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.org/acme-shop/pkg/9",
+      "creationInfo": "_:creationInfo1",
+      "name": "lodash",
+      "software_packageVersion": "4.17.15",
+      "software_primaryPurpose": "library",
+      "software_packageUrl": "pkg:npm/lodash@4.17.15",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "packageUrl",
+          "identifier": "pkg:npm/lodash@4.17.15"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "https://example.org/acme-shop/rel/9",
+      "creationInfo": "_:creationInfo1",
+      "relationshipType": "dependsOn",
+      "from": "https://example.org/acme-shop/pkg/acme-shop",
+      "to": [
+        "https://example.org/acme-shop/pkg/9"
+      ],
+      "completeness": "complete"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.org/acme-shop/pkg/10",
+      "creationInfo": "_:creationInfo1",
+      "name": "express",
+      "software_packageVersion": "4.17.1",
+      "software_primaryPurpose": "library",
+      "software_packageUrl": "pkg:npm/express@4.17.1",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "packageUrl",
+          "identifier": "pkg:npm/express@4.17.1"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "https://example.org/acme-shop/rel/10",
+      "creationInfo": "_:creationInfo1",
+      "relationshipType": "dependsOn",
+      "from": "https://example.org/acme-shop/pkg/acme-shop",
+      "to": [
+        "https://example.org/acme-shop/pkg/10"
+      ],
+      "completeness": "complete"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.org/acme-shop/pkg/11",
+      "creationInfo": "_:creationInfo1",
+      "name": "minimist",
+      "software_packageVersion": "1.2.0",
+      "software_primaryPurpose": "library",
+      "software_packageUrl": "pkg:npm/minimist@1.2.0",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "packageUrl",
+          "identifier": "pkg:npm/minimist@1.2.0"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "https://example.org/acme-shop/rel/11",
+      "creationInfo": "_:creationInfo1",
+      "relationshipType": "dependsOn",
+      "from": "https://example.org/acme-shop/pkg/acme-shop",
+      "to": [
+        "https://example.org/acme-shop/pkg/11"
+      ],
+      "completeness": "complete"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.org/acme-shop/pkg/12",
+      "creationInfo": "_:creationInfo1",
+      "name": "axios",
+      "software_packageVersion": "0.21.1",
+      "software_primaryPurpose": "library",
+      "software_packageUrl": "pkg:npm/axios@0.21.1",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "packageUrl",
+          "identifier": "pkg:npm/axios@0.21.1"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "https://example.org/acme-shop/rel/12",
+      "creationInfo": "_:creationInfo1",
+      "relationshipType": "dependsOn",
+      "from": "https://example.org/acme-shop/pkg/acme-shop",
+      "to": [
+        "https://example.org/acme-shop/pkg/12"
+      ],
+      "completeness": "complete"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.org/acme-shop/pkg/13",
+      "creationInfo": "_:creationInfo1",
+      "name": "Django",
+      "software_packageVersion": "3.2.4",
+      "software_primaryPurpose": "library",
+      "software_packageUrl": "pkg:pypi/django@3.2.4",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "packageUrl",
+          "identifier": "pkg:pypi/django@3.2.4"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "https://example.org/acme-shop/rel/13",
+      "creationInfo": "_:creationInfo1",
+      "relationshipType": "dependsOn",
+      "from": "https://example.org/acme-shop/pkg/acme-shop",
+      "to": [
+        "https://example.org/acme-shop/pkg/13"
+      ],
+      "completeness": "complete"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.org/acme-shop/pkg/14",
+      "creationInfo": "_:creationInfo1",
+      "name": "requests",
+      "software_packageVersion": "2.25.0",
+      "software_primaryPurpose": "library",
+      "software_packageUrl": "pkg:pypi/requests@2.25.0",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "packageUrl",
+          "identifier": "pkg:pypi/requests@2.25.0"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "https://example.org/acme-shop/rel/14",
+      "creationInfo": "_:creationInfo1",
+      "relationshipType": "dependsOn",
+      "from": "https://example.org/acme-shop/pkg/acme-shop",
+      "to": [
+        "https://example.org/acme-shop/pkg/14"
+      ],
+      "completeness": "complete"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.org/acme-shop/pkg/15",
+      "creationInfo": "_:creationInfo1",
+      "name": "PyYAML",
+      "software_packageVersion": "5.3.1",
+      "software_primaryPurpose": "library",
+      "software_packageUrl": "pkg:pypi/pyyaml@5.3.1",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "packageUrl",
+          "identifier": "pkg:pypi/pyyaml@5.3.1"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "https://example.org/acme-shop/rel/15",
+      "creationInfo": "_:creationInfo1",
+      "relationshipType": "dependsOn",
+      "from": "https://example.org/acme-shop/pkg/acme-shop",
+      "to": [
+        "https://example.org/acme-shop/pkg/15"
+      ],
+      "completeness": "complete"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.org/acme-shop/pkg/16",
+      "creationInfo": "_:creationInfo1",
+      "name": "Newtonsoft.Json",
+      "software_packageVersion": "12.0.1",
+      "software_primaryPurpose": "library",
+      "software_packageUrl": "pkg:nuget/Newtonsoft.Json@12.0.1",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "packageUrl",
+          "identifier": "pkg:nuget/Newtonsoft.Json@12.0.1"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "https://example.org/acme-shop/rel/16",
+      "creationInfo": "_:creationInfo1",
+      "relationshipType": "dependsOn",
+      "from": "https://example.org/acme-shop/pkg/acme-shop",
+      "to": [
+        "https://example.org/acme-shop/pkg/16"
+      ],
+      "completeness": "complete"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.org/acme-shop/pkg/17",
+      "creationInfo": "_:creationInfo1",
+      "name": "golang.org/x/crypto",
+      "software_packageVersion": "0.0.0-20200622213623-75b288015ac9",
+      "software_primaryPurpose": "library",
+      "software_packageUrl": "pkg:golang/golang.org/x/crypto@v0.0.0-20200622213623-75b288015ac9",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "packageUrl",
+          "identifier": "pkg:golang/golang.org/x/crypto@v0.0.0-20200622213623-75b288015ac9"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "https://example.org/acme-shop/rel/17",
+      "creationInfo": "_:creationInfo1",
+      "relationshipType": "dependsOn",
+      "from": "https://example.org/acme-shop/pkg/acme-shop",
+      "to": [
+        "https://example.org/acme-shop/pkg/17"
+      ],
+      "completeness": "complete"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.org/acme-shop/pkg/18",
+      "creationInfo": "_:creationInfo1",
+      "name": "junit",
+      "software_packageVersion": "4.13.2",
+      "software_primaryPurpose": "library",
+      "software_packageUrl": "pkg:maven/junit/junit@4.13.2",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "packageUrl",
+          "identifier": "pkg:maven/junit/junit@4.13.2"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "https://example.org/acme-shop/rel/18",
+      "creationInfo": "_:creationInfo1",
+      "relationshipType": "dependsOn",
+      "from": "https://example.org/acme-shop/pkg/acme-shop",
+      "to": [
+        "https://example.org/acme-shop/pkg/18"
+      ],
+      "completeness": "complete"
+    },
+    {
+      "type": "software_Package",
+      "spdxId": "https://example.org/acme-shop/pkg/19",
+      "creationInfo": "_:creationInfo1",
+      "name": "slf4j-api",
+      "software_packageVersion": "1.7.36",
+      "software_primaryPurpose": "library",
+      "software_packageUrl": "pkg:maven/org.slf4j/slf4j-api@1.7.36",
+      "externalIdentifier": [
+        {
+          "type": "ExternalIdentifier",
+          "externalIdentifierType": "packageUrl",
+          "identifier": "pkg:maven/org.slf4j/slf4j-api@1.7.36"
+        }
+      ]
+    },
+    {
+      "type": "Relationship",
+      "spdxId": "https://example.org/acme-shop/rel/19",
+      "creationInfo": "_:creationInfo1",
+      "relationshipType": "dependsOn",
+      "from": "https://example.org/acme-shop/pkg/acme-shop",
+      "to": [
+        "https://example.org/acme-shop/pkg/19"
+      ],
+      "completeness": "complete"
+    },
+    {
+      "type": "Agent",
+      "spdxId": "https://example.org/acme-shop/agent/build-pipeline",
+      "creationInfo": "_:creationInfo1",
+      "name": "acme build pipeline"
+    },
+    {
+      "type": "Tool",
+      "spdxId": "https://example.org/acme-shop/tool/sbom-generator",
+      "creationInfo": "_:creationInfo1",
+      "name": "sbom-generator 1.0"
+    },
+    {
+      "@id": "_:creationInfo1",
+      "type": "CreationInfo",
+      "specVersion": "3.0.1",
+      "created": "2026-10-26T00:00:00Z",
+      "createdBy": [
+        "https://example.org/acme-shop/agent/build-pipeline"
+      ],
+      "createdUsing": [
+        "https://example.org/acme-shop/tool/sbom-generator"
+      ]
+    }
+  ]
+}
