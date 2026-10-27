@@ -50,23 +50,35 @@ steps:
     nexusIqService: 'int-test-sonatype'
     # nexusIqService: 'My-IQ'
     # applicationId: 'kt-azure-test-15'
-    applicationId: 'kt-test'
+    applicationId: 'kt-custom-app'
     stage: 'Build'
     scanTargets: '*.jar'
     enableReachability: false
     acceptIqServerSelfSignedCertificates: true
+
+# - task: SonatypeFetchSbom@3
+#   displayName: 'Sonatype IQ Fetch SBOM'
+#   name: sonatypeFetchSbomTask
+#   inputs:
+#     nexusIqService: 'int-test-sonatype'
+#     # nexusIqService: 'My-IQ'
+#     applicationId: 'kt-test'
+#     scanId: '$(sonatypePolicyEvaluation.scanId)'
+#     sbomStandard: cycloneDx
+#     sbomVersion: 1.7
+#     sbomFormat: xml
+#   condition: succeededOrFailed()
 
 - task: SonatypeFetchSbom@3
   displayName: 'Sonatype IQ Fetch SBOM'
   name: sonatypeFetchSbomTask
   inputs:
     nexusIqService: 'int-test-sonatype'
-    # nexusIqService: 'My-IQ'
     applicationId: 'kt-test'
     scanId: '$(sonatypePolicyEvaluation.scanId)'
-    sbomStandard: cycloneDx
-    sbomVersion: 1.7
-    sbomFormat: xml
+    sbomStandard: spdx
+    sbomVersion: '3.0'
+    sbomFormat: json
   condition: succeededOrFailed()
 
 # - task: NexusIqPipelineTask@3
