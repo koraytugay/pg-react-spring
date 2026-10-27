@@ -75,7 +75,7 @@ steps:
   name: sonatypeFetchSbomTask
   inputs:
     nexusIqService: 'int-test-sonatype'
-    applicationId: 'kt-test'
+    applicationId: 'kt-custom-app'
     scanId: '$(sonatypePolicyEvaluation.scanId)'
     sbomStandard: spdx
     sbomVersion: '3.0'
