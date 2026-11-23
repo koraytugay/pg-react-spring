@@ -1,0 +1,51 @@
+# Repro for INT-11077: IQ task fails with "Unable to process command '##vso[task.de..." when
+# task.debug logging (task-lib find() over a huge tree) interleaves with CLI output.
+# Previous pipeline is kept in backup/azure-pipelines-old.yml
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  system.debug: true          # makes task-lib emit ##vso[task.debug] for every file find() visits
+  bigTreeDir: $(Build.SourcesDirectory)/big-tree
+  bigTreePackages: 400        # packages x filesPerPackage = total generated files
+  filesPerPackage: 500
+
+steps:
+- checkout: self
+
+# Generate a huge pnpm-like node_modules tree at runtime (keeps the git repo small)
+- bash: |
+    set -e
+    root="$(bigTreeDir)/node_modules/.pnpm"
+    for p in $(seq 1 $(bigTreePackages)); do
+      d="$root/pkg$p@1.0.$p/node_modules/pkg$p/dist/esm"
+      mkdir -p "$d"
+      for f in $(seq 1 $(filesPerPackage)); do
+        echo "export const v$f = $f;" > "$d/rw$f.mjs"
+      done
+    done
+    echo "Generated $(find "$(bigTreeDir)" -type f | wc -l) files"
+  displayName: 'Generate large node_modules/.pnpm tree'
+
+- task: JavaToolInstaller@0
+  inputs:
+    versionSpec: '17'
+    jdkArchitectureOption: 'x64'
+    jdkSourceOption: 'PreInstalled'
+
+- task: NexusIqPipelineTask@3
+  env:
+    SYSTEM_ACCESSTOKEN: $(System.AccessToken)
+  inputs:
+    nexusIqService: 'int-test-sonatype'
+    applicationId: 'kt-azure-test-15'
+    stage: 'Build'
+    # find() walks the whole workspace (incl. big-tree) regardless of the pattern; keep the
+    # actual scan small so the run isn't dominated by scanning generated files
+    scanTargets: '*.jar'
+    enableDebugLogging: true   # CLI -X, makes the CLI log heavily too
+    acceptIqServerSelfSignedCertificates: true

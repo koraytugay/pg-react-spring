@@ -1,6 +1,7 @@
-# Repro for INT-11077: IQ task fails with "Unable to process command '##vso[task.de..." when
-# task.debug logging (task-lib find() over a huge tree) interleaves with CLI output.
-# Previous pipeline is kept in backup/azure-pipelines-old.yml
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
 
 trigger:
 - master
@@ -8,28 +9,25 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-variables:
-  system.debug: true          # makes task-lib emit ##vso[task.debug] for every file find() visits
-  bigTreeDir: $(Build.SourcesDirectory)/big-tree
-  bigTreePackages: 400        # packages x filesPerPackage = total generated files
-  filesPerPackage: 500
+resources:
+  repositories:
+    - repository: self     # explicitly declare “self”
+      type: git
 
 steps:
 - checkout: self
+  persistCredentials: true
 
-# Generate a huge pnpm-like node_modules tree at runtime (keeps the git repo small)
-- bash: |
-    set -e
-    root="$(bigTreeDir)/node_modules/.pnpm"
-    for p in $(seq 1 $(bigTreePackages)); do
-      d="$root/pkg$p@1.0.$p/node_modules/pkg$p/dist/esm"
-      mkdir -p "$d"
-      for f in $(seq 1 $(filesPerPackage)); do
-        echo "export const v$f = $f;" > "$d/rw$f.mjs"
-      done
-    done
-    echo "Generated $(find "$(bigTreeDir)" -type f | wc -l) files"
-  displayName: 'Generate large node_modules/.pnpm tree'
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'pom.xml'
+    mavenOptions: '-Xmx3072m'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '17'
+    jdkArchitectureOption: 'x64'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    goals: 'package'
 
 - task: JavaToolInstaller@0
   inputs:
@@ -37,15 +35,78 @@ steps:
     jdkArchitectureOption: 'x64'
     jdkSourceOption: 'PreInstalled'
 
-- task: NexusIqPipelineTask@3
+# - task: SonatypeCliSetup@2
+#   inputs:
+#     cliVersion: 1.185.0-01
+
+- task: SonatypeEvaluate@3
+  name: sonatypePolicyEvaluation
   env:
     SYSTEM_ACCESSTOKEN: $(System.AccessToken)
   inputs:
+    # cliDownloadUrl: https://repo.sonatype.com/repository/zion-private-releases/com/sonatype/insight/brain/nexus-iq-cli/2.8.3-01/nexus-iq-cli-2.8.3-01.jar
+    # cliDownloadAuth: $(MY_CLI_DOWNLOAD_SECRET)
+    # cliDownloadAuth: wrong:password
     nexusIqService: 'int-test-sonatype'
-    applicationId: 'kt-azure-test-15'
+    # nexusIqService: 'My-IQ'
+    # applicationId: 'kt-azure-test-15'
+    applicationId: 'kt-custom-app'
     stage: 'Build'
-    # find() walks the whole workspace (incl. big-tree) regardless of the pattern; keep the
-    # actual scan small so the run isn't dominated by scanning generated files
     scanTargets: '*.jar'
-    enableDebugLogging: true   # CLI -X, makes the CLI log heavily too
+    # scanTargets: 'myspdx3.spdx.json'
+    enableReachability: false
     acceptIqServerSelfSignedCertificates: true
+
+# - task: SonatypeFetchSbom@3
+#   displayName: 'Sonatype IQ Fetch SBOM'
+#   name: sonatypeFetchSbomTask
+#   inputs:
+#     nexusIqService: 'int-test-sonatype'
+#     # nexusIqService: 'My-IQ'
+#     applicationId: 'kt-test'
+#     scanId: '$(sonatypePolicyEvaluation.scanId)'
+#     sbomStandard: cycloneDx
+#     sbomVersion: 1.7
+#     sbomFormat: xml
+#   condition: succeededOrFailed()
+
+- task: SonatypeFetchSbom@3
+  displayName: 'Sonatype IQ Fetch SBOM'
+  name: sonatypeFetchSbomTask
+  inputs:
+    nexusIqService: 'int-test-sonatype'
+    applicationId: 'kt-custom-app'
+    scanId: '$(sonatypePolicyEvaluation.scanId)'
+    sbomStandard: spdx
+    sbomVersion: '3.0'
+    sbomFormat: json
+  condition: succeededOrFailed()
+
+# - task: NexusIqPipelineTask@3
+#   env:
+#     SYSTEM_ACCESSTOKEN: $(System.AccessToken)
+#   inputs:
+#     cliDownloadUrl: https://repo.sonatype.com/repository/zion-private-releases/com/sonatype/insight/brain/nexus-iq-cli/2.8.3-01/nexus-iq=cli-2.8.3-01.jar
+#     cliDownloadAuth: ${MY_CLI_DOWNLOAD_SECRET}
+#     # nexusIqService: 'My-IQ'
+#     nexusIqService: 'int-test-sonatype'
+#     # nexusIqService: 'local-iq'
+#     applicationId: 'kt-azure-test-15'
+#     stage: 'Build'
+#     scanTargets: '*.jar'
+#     # scanTargets: '**/kt-js-reachable/**, *.jar'
+#     # enableCallflow: false
+#     # callflowNamespaces: com.sonatype
+#     enableReachability: 'false'
+#     # reachabilityNamespaces: 'com.sonatype'
+#     # reachabilityEntrypointStrategy: 'PUBLIC_CONCRETE'
+#     acceptIqServerSelfSignedCertificates: true
+#     # enableReachabilityJs: true
+#     # reachabilityJsSources: '*app*.js'
+#     # reachabilityJsSources: 'no-no-no.js'
+#     # reachabilityJsExcludes: 'node_modules/** test/** *.test.js'
+#     # reachabilityJsProjectRoot: '$(Build.SourcesDirectory)/kt-js-reachable'
+#     # ignoreReachabilityErrors: false
+
+# - script: sleep 60
+#   displayName: 'Sleep for 60 seconds'
